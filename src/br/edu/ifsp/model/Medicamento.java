@@ -7,24 +7,41 @@ public class Medicamento implements IModel{
   float valor;
   boolean retemReceita;
   
-  public int getidMedicamento(){
+  public int getIdMedicamento(){
     return this.idMedicamento;
   }
-  public void setidMedicamento(int idMedicamento){
+  public void setIdMedicamento(int idMedicamento){
     this.idMedicamento = idMedicamento;
   }
   
-  //Como vamos implementar esse método 
-  public enum gettarja(){
+  //Como vamos implementar esse mÃ©todo 
+  public enum getTarja(){
     return this.tarja;
   }
-  public void settarja(enum tarja){
+  public void setTarja(enum tarja){
     this.tarja = tarja;
   }
   
-  public String getnome(){
+  public String getNome(){
     return this.nome;
   }
+  public void setNome(String nome){
+    this.nome = nome;
+  }
+  
+  public float getValor(){
+    return valor;
+  }
+  public void setValor(float valor){
+    this.valor = valor;
+  }
+  
+  public boolean getRetemReceita(){
+    return this.retemReceita;
+  }
+  
+}
+
   public void setnome(String nome){
     this.nome = nome;
   }

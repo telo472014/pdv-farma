@@ -3,9 +3,9 @@ package br.edu.ifsp.model;
 import java.sql.Date;
 
 public abstract class Pessoa implements IModel{
-    String nome;
-    Date nascimento;
-    long idPessoa;
+    private String nome;
+    private Date nascimento;
+    private long idPessoa;
 
     public long getIdPessoa() {
         return idPessoa;

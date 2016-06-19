@@ -1,0 +1,17 @@
+package br.edu.ifsp.controller;
+
+import br.edu.ifsp.model.IModel;
+import br.edu.ifsp.model.database.DAO.DAO;
+
+import java.util.List;
+
+public abstract class Controller<E extends IModel> {
+
+    protected DAO<E> dao;
+
+    public Controller(DAO<E> dao) {
+        this.dao = dao;
+    }
+
+    public abstract List<E> listAll();
+}

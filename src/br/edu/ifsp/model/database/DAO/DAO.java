@@ -1,15 +1,17 @@
 package br.edu.ifsp.model.database.DAO;
 
+import br.edu.ifsp.model.IModel;
+import br.edu.ifsp.model.database.Database;
+import br.edu.ifsp.model.database.MariaDatabase;
+
 import java.util.List;
 
-import br.edu.ifsp.model.database.Database;
-
-public abstract class DAO<E> {
+public abstract class DAO<E extends IModel> {
 
 	protected Database database;
 
-	public DAO(Database database) {
-		this.database = database;
+	public DAO() {
+		this.database = new MariaDatabase("root", "", "Farmacia");
 	}
 
 	public abstract boolean insert(E objeto);

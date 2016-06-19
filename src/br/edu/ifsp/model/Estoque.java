@@ -1,6 +1,6 @@
 package br.edu.ifsp.model;
 
-import java.util.*;
+import java.sql.Date;
 
 public class Estoque implements IModel{
   long idEstoque;

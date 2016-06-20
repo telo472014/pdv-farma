@@ -64,12 +64,22 @@ public class VendaDAO extends DAO<Venda>{
 
     @Override
     public boolean update(Venda venda) {
-        return false;//TODO:
+        String sql = "UPDATE Venda idVenda = ?, data = ?, hora = ?, receita = ? WHERE idVenda = ?";
+        
+        sql = sql.replaceFirst("\\?", venda.getidVenda().toString());
+        sql = sql.replaceFirst("\\?","\""+ venda.getdata().toString()+"\"");
+        sql = sql.replaceFirst("\\?", "\""+venda.gethora().toString()+"\"");
+        sql = sql.replaceFirst("\\?", venda.getreceita().toString());
+        
     }
 
     @Override
     public boolean delete(Venda venda) {
-        return false;//TODO:
+        String sql = "DELETE Venda WHERE idVenda = ?";
+        
+        sql = sql.replaceFirst("\\?", venda.idVenda().toString());
+        
+        return database.delete(sql);
     }
 
     @Override

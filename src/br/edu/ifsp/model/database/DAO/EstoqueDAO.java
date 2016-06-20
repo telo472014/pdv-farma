@@ -58,12 +58,25 @@ public class EstoqueDAO extends DAO<Estoque>{
 
     @Override
     public boolean update(Estoque estoque) {
-        return false;//TODO
+    	
+    	String sql = "UPDATE Estoque SET idEstoque = ?, qtdeAtual = ?, validade = ? WHERE idEstoque = ?";
+		
+		sql = sql.replaceFirst("\\?", estoque.getidEstoque().toString());
+		sql = sql.replaceFirst("\\?", "\"" + estoque.getqtdeAtual()+ "\"");
+		sql = sql.replaceFirst("\\?", estoque.getvalidade());
+
+		return database.update(sql);
     }
 
     @Override
     public boolean delete(Estoque estoque) {
-        return false;//TODO
+    	
+    	String sql = "DELETE Estoque WHERE idEstoque = ?";
+		
+		sql = sql.replaceFirst("\\?", estoque.getidEstoque().toString());
+
+		return database.delete(sql);
+        
     }
 
     @Override

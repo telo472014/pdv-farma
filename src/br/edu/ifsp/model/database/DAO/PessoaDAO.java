@@ -49,12 +49,22 @@ public class PessoaDAO extends DAO<Pessoa> {
 
     @Override
     public boolean update(Pessoa pessoa) {
-        return false;
+        String sql = "UPDATE Pessoa idPessoa = ?, nome = ?, nascimento = ?  WHERE idPessoa = ?";
+        
+        sql = sql.replaceFirst("\\?", pessoa.getidPessoa().toString());
+        sql = sql.replaceFirst("\\?","\""+ pessoa.getnome()+"\"");
+        sql = sql.replaceFirst("\\?", pessoa.getnascimento().toString());
+        
+        return database.update(sql);
     }
 
     @Override
     public boolean delete(Pessoa pessoa) {
-        return false;
+        String sql = "DELETE Pessoa WHERE idPessoa = ?";
+        
+        sql = sql.replaceFirst("\\?", pessoa.getidPessoa().toString());
+        
+        return database.delete(sql);
     }
 
     @Override

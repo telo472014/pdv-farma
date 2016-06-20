@@ -61,12 +61,25 @@ public class ItemVendaDAO extends DAO<ItemVenda>{
 
     @Override
     public boolean update(ItemVenda itemVenda) {
-        return false;
+    	String sql = "UPDATE ItemVenda SET idItemVenda = ?, idVenda = ?, idMedicamento = ?, quantidade = ?, "
+    			+ " valorunitario = ? WHERE idEstoque = ?";
+		
+		sql = sql.replaceFirst("\\?", itemVenda.getidVenda().toString());
+		sql = sql.replaceFirst("\\?", "\"" + itemVenda.getidVenda().toString()+ "\"");
+		sql = sql.replaceFirst("\\?", "\"" + itemVenda.getidMedicamento().toString()+ "\"");
+		sql = sql.replaceFirst("\\?", "\"" + itemVenda.getquantidade().toString()+ "\"");
+		sql = sql.replaceFirst("\\?", cliente.CNPJ());
+
+		return database.update(sql);
     }
 
     @Override
     public boolean delete(ItemVenda itemVenda) {
-        return false;
+    	String sql = "DELETE ItenVenda WHERE idItemVenda = ?";
+		
+		sql = sql.replaceFirst("\\?", itemVenda.getidVenda().toString());
+
+		return database.delete(sql);
     }
 
     @Override

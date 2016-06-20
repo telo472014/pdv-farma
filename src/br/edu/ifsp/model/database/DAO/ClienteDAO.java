@@ -48,21 +48,28 @@ public class ClienteDAO extends DAO<Cliente>{
 
     @Override
     public boolean update(Cliente cliente) {
-        return false;
-    }
+    	String sql = "UPDATE Cliente SET idCliente = ?, nome = ? WHERE idCliente = ?";
+		
+		sql = sql.replaceFirst("\\?", cliente.getIdCliente().toString());
+		sql = sql.replaceFirst("\\?", "\"" + cliente.getEndereco().toString + "\"");
+		sql = sql.replaceFirst("\\?", cliente.getIdCliente().toString());
 
-    @Override
-    public boolean delete(Cliente cliente) {
-        return false;
-    }
+		return database.update(sql);
+	}
 
-    @Override
-    public List<Cliente> find(Cliente cliente, String by, String value) {
-        return null;
-    }
+	@Override
+	public boolean delete(Cliente cliente) {
+		String sql = "DELETE Cliente WHERE idCliente = ?";
+		
+		sql = sql.replaceFirst("\\?", cliente.getIdCliente().toString());
 
-    @Override
-    public List<Cliente> listAll() {
-        return null;
-    }
+		return database.delete(sql);
+	}
+
+	@Override
+	public List<Cliente> listAll() {
+		// Falta implementar query...
+		return null;
+	}
+
 }

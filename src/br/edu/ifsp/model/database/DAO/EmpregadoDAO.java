@@ -53,19 +53,31 @@ public class EmpregadoDAO extends DAO<Empregado>{
 
     @Override
     public boolean update(Empregado empregado) {
-        return false;
+    	String sql = "UPDATE Empregado SET idEmpregado = ?, Matricula = ?, Cargo = ? WHERE idEmpregado = ?";
+		
+		sql = sql.replaceFirst("\\?", empregado.getidEmpregado().toString());
+		sql = sql.replaceFirst("\\?", "\"" + empregado.getMatricula()+ "\"");
+		sql = sql.replaceFirst("\\?", empregado.getCargo());
+
+		return database.update(sql);
     }
 
     @Override
     public boolean delete(Empregado empregado) {
-        return false;
-    }
+		
+    	String sql = "DELETE Empregado WHERE idEmpregado = ?";
+		
+		sql = sql.replaceFirst("\\?", empregado.getidEmpregado().toString());
 
+		return database.delete(sql);
+    }
+    
     @Override
-    public List<Empregado> find(Empregado empregado, String by, String value) {
-        return null;
+    public List<Estoque> find(Empregado empregado, String by, String value) {
+        return null;//TODO
     }
 
+   
     @Override
     public List<Empregado> listAll() {
         return null;

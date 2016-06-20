@@ -53,12 +53,24 @@ public class FabricanteDAO extends DAO<Fabricante>{
 
     @Override
     public boolean update(Fabricante fabricante) {
-        return false;
+    	String sql = "UPDATE Fabricante SET idFabricante = ?, nome = ?, endereco = ?, CNPJ = ? WHERE idEstoque = ?";
+		
+		sql = sql.replaceFirst("\\?", fabricante.getisFabricante().toString());
+		sql = sql.replaceFirst("\\?", "\"" + fabricante.getidnome()+ "\"");
+		sql = sql.replaceFirst("\\?", "\"" + fabricante.endereco()+ "\"");
+		sql = sql.replaceFirst("\\?", fabricante.CNPJ());
+
+		return database.update(sql);
+
     }
 
     @Override
     public boolean delete(Fabricante fabricante) {
-        return false;
+    	String sql = "DELETE Fabricante WHERE idFabricante = ?";
+		
+		sql = sql.replaceFirst("\\?", fabricante.getidFabricante().toString());
+
+		return database.delete(sql);
     }
 
     @Override

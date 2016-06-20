@@ -22,4 +22,6 @@ public abstract class Controller<E extends IModel> {
 
     public abstract void delete(E objeto);
 
+    public abstract List<E> find(E objeto, String by, String value);
+
 }

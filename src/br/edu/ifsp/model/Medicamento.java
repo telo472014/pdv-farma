@@ -1,7 +1,7 @@
 package br.edu.ifsp.model;
 
 public class Medicamento implements IModel{
-    private int idMedicamento;
+    private long idMedicamento;
     private String tarja;
     private String nome;
     private float valor;
@@ -9,20 +9,20 @@ public class Medicamento implements IModel{
     private long quantidadeMin;
     private long idFabricante;
 
+    public long getIdMedicamento() {
+        return idMedicamento;
+    }
+
+    public void setIdMedicamento(long idMedicamento) {
+        this.idMedicamento = idMedicamento;
+    }
+
     public long getIdFabricante() {
         return idFabricante;
     }
 
     public void setIdFabricante(long idFabricante) {
         this.idFabricante = idFabricante;
-    }
-
-    public int getIdMedicamento() {
-        return idMedicamento;
-    }
-
-    public void setIdMedicamento(int idMedicamento) {
-        this.idMedicamento = idMedicamento;
     }
 
     public String getTarja() {

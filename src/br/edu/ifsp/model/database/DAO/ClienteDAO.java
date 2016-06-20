@@ -57,12 +57,12 @@ public class ClienteDAO extends DAO<Cliente>{
     }
 
     @Override
-    public List<Cliente> find(Cliente objeto, String by, String value) {
+    public List<Cliente> find(Cliente cliente, String by, String value) {
         return null;
     }
 
     @Override
-    protected List<Cliente> listAll() {
+    public List<Cliente> listAll() {
         return null;
     }
 }

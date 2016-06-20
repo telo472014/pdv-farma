@@ -2,35 +2,41 @@ package br.edu.ifsp.model;
 
 public class ItemVenda implements IModel{
 
-    private Venda venda;
-
-    private Medicamento medicamento;
-
-    private int quantidade;
-
+    private long idItemVenda;
+    private long idVenda;
+    private long idMedicamento;
+    private long quantidade;
     private Float valorUnitario;
 
-    public Venda getVenda() {
-        return venda;
+    public long getIdItemVenda() {
+        return idItemVenda;
     }
 
-    public void setVenda(Venda venda) {
-        this.venda = venda;
+    public void setIdItemVenda(long idItemVenda) {
+        this.idItemVenda = idItemVenda;
     }
 
-    public Medicamento getMedicamento() {
-        return medicamento;
+    public long getIdVenda() {
+        return idVenda;
     }
 
-    public void setMedicamento(Medicamento medicamento) {
-        this.medicamento = medicamento;
+    public void setIdVenda(long idVenda) {
+        this.idVenda = idVenda;
     }
 
-    public int getQuantidade() {
+    public long getIdMedicamento() {
+        return idMedicamento;
+    }
+
+    public void setIdMedicamento(long idMedicamento) {
+        this.idMedicamento = idMedicamento;
+    }
+
+    public long getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public void setQuantidade(long quantidade) {
         this.quantidade = quantidade;
     }
 

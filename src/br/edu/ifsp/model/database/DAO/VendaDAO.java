@@ -78,7 +78,7 @@ public class VendaDAO extends DAO<Venda>{
     }
 
     @Override
-    protected List<Venda> listAll() {
+    public List<Venda> listAll() {
         return null;//TODO:
     }
 }

@@ -2,6 +2,8 @@ package br.edu.ifsp.model.database.DAO;
 
 import br.edu.ifsp.model.Medicamento;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 public class MedicamentoDAO extends DAO<Medicamento> {
@@ -19,9 +21,11 @@ public class MedicamentoDAO extends DAO<Medicamento> {
 
     @Override
     public boolean insert(Medicamento medicamento) {
+        String sql;
+        ResultSet resultado;
+
         super.database.connect();
-        String sql =
-                "INSERT INTO Medicamento(" +
+        sql = "INSERT INTO Medicamento(" +
                         "nome, tarja, valor, retemReceita, quantidadeMin, idFabricante) " +
                         "values ('"+
                         medicamento.getNome()+"','"+
@@ -32,6 +36,17 @@ public class MedicamentoDAO extends DAO<Medicamento> {
                         medicamento.getIdFabricante()+")";
 
         super.database.executeSQL(sql);
+
+        try{
+            resultado = super.database.query("SELECT MAX(idMedicamento) as lastID FROM Medicamento");
+            resultado.next();
+
+            medicamento.setIdMedicamento(resultado.getLong("lastID"));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         super.database.disconnect();
         return true;
     }

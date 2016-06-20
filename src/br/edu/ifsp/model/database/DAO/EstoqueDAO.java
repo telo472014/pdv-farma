@@ -45,7 +45,9 @@ public class EstoqueDAO extends DAO<Estoque>{
         try{
             resultado = super.database.query("SELECT MAX(idEstoque) as lastID FROM Estoque");
             resultado.next();
-            idEstoque = resultado.getLong("lastID");
+
+            estoque.setIdEstoque(resultado.getLong("lastID"));
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -70,7 +72,7 @@ public class EstoqueDAO extends DAO<Estoque>{
     }
 
     @Override
-    protected List<Estoque> listAll() {
+    public List<Estoque> listAll() {
         return null;//TODO
     }
 }

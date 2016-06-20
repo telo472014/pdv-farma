@@ -30,4 +30,9 @@ public class MedicamentoController extends Controller<Medicamento>{
     public void delete(Medicamento medicamento) {
         super.dao.delete(medicamento);
     }
+
+    @Override
+    public List<Medicamento> find(Medicamento medicamento, String by, String value) {
+        return super.dao.find(medicamento,by,value);
+    }
 }

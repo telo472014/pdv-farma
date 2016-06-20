@@ -70,7 +70,7 @@ public class PessoaDAO extends DAO<Pessoa> {
     }
 
     @Override
-    protected List<Pessoa> listAll() {
+    public List<Pessoa> listAll() {
         return null;
     }
 }

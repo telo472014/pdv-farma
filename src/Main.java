@@ -7,15 +7,15 @@ import br.edu.ifsp.model.Pessoa;
 
 public class Main {
     public static void main(String[] args){
-//        Medicamento medicamento = new Medicamento();
-//        medicamento.setIdMedicamento(2);
-//        medicamento.setNome("Cimegripe");
-//        medicamento.setTarja("Sem");
-//        medicamento.setValor(8.2f);
-//        medicamento.setQuantidadeMin(50);
-//        medicamento.setRetemReceita(false);
-//        medicamento.setIdFabricante(2);
-//        Controller controller = new MedicamentoController(medicamento);
-//        controller.update(medicamento);
+        Medicamento medicamento = new Medicamento();
+        medicamento.setNome("Texter");
+        medicamento.setTarja("Sem");
+        medicamento.setValor(8.2f);
+        medicamento.setQuantidadeMin(50);
+        medicamento.setRetemReceita(false);
+        medicamento.setIdFabricante(2);
+        Controller controller = new MedicamentoController(medicamento);
+        controller.insert(medicamento);
+        System.out.println(medicamento.getIdMedicamento());
     }
 }

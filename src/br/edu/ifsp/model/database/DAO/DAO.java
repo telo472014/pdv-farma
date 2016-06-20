@@ -26,5 +26,5 @@ public abstract class DAO<E extends IModel> {
 
     public abstract List<E> find(E objeto, String by, String value);
 
-    protected abstract List<E> listAll();
+    public abstract List<E> listAll();
 }

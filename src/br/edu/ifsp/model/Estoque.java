@@ -3,42 +3,40 @@ package br.edu.ifsp.model;
 import java.sql.Date;
 
 public class Estoque implements IModel{
-  long idEstoque;
-  int qtdeAtual;
-  int qtdeMin;
-  Date validade; //Utilizei esse tipo, mas se achar melhor podemos mudar para outro.
-  
-  public long getidEstoque(){
-    return idEstoque;
-  }
-  
-  public void setidEstoque(long idEstoque){
-    this.idEstoque = idEstoque;
-  }
-  
-  public int getqtdeAtual(){
-    return qtdeAtual;
-  }
-  
-  public void setqtdeAtual(int qtdeAtual){
-    this.qtdeAtual = qtdeAtual;
-  }
-  
-  public int getqtdeMin(){
-    return qtdeMin;
-  }
-  
-  public void setqtdeMin(int qtdeMin){
-    this.qtdeMin = qtdeMin;
-  }
-  
-  public Date getvalidade(){
-    return validade;
-  }
-  
-  public void setvalidade(Date validade){
-    this.validade = validade;
-  }
-  
-  
+    long idEstoque;
+    long idMedicamento;
+    int qtdeAtual;
+    Date validade;
+
+    public long getIdEstoque() {
+        return idEstoque;
+    }
+
+    public void setIdEstoque(long idEstoque) {
+        this.idEstoque = idEstoque;
+    }
+
+    public long getIdMedicamento() {
+        return idMedicamento;
+    }
+
+    public void setIdMedicamento(long idMedicamento) {
+        this.idMedicamento = idMedicamento;
+    }
+
+    public int getQtdeAtual() {
+        return qtdeAtual;
+    }
+
+    public void setQtdeAtual(int qtdeAtual) {
+        this.qtdeAtual = qtdeAtual;
+    }
+
+    public Date getValidade() {
+        return validade;
+    }
+
+    public void setValidade(Date validade) {
+        this.validade = validade;
+    }
 }

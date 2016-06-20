@@ -1,6 +1,6 @@
 package br.edu.ifsp.model;
 
-public class Transacao implements IModel{
+public class ItemVenda implements IModel{
 
     private Venda venda;
 

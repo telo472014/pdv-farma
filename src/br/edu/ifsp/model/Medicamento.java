@@ -7,6 +7,15 @@ public class Medicamento implements IModel{
     private float valor;
     private boolean retemReceita;
     private long quantidadeMin;
+    private long idFabricante;
+
+    public long getIdFabricante() {
+        return idFabricante;
+    }
+
+    public void setIdFabricante(long idFabricante) {
+        this.idFabricante = idFabricante;
+    }
 
     public int getIdMedicamento() {
         return idMedicamento;
@@ -40,7 +49,7 @@ public class Medicamento implements IModel{
         this.valor = valor;
     }
 
-    public boolean isRetemReceita() {
+    public boolean getRetemReceita() {
         return retemReceita;
     }
 

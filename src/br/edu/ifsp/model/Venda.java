@@ -4,9 +4,28 @@ import java.util.Date;
 import java.util.List;
 
 public class Venda implements IModel{
+    private long idVenda;
     private Date data;
     private Date hora;
-    private List<Transacao> itens;
+    private long idReceita = -1;
+
+    public long getIdVenda() {
+        return idVenda;
+    }
+
+    public void setIdVenda(long idVenda) {
+        this.idVenda = idVenda;
+    }
+
+    public long getIdReceita() {
+        return idReceita;
+    }
+
+    public void setIdReceita(long idReceita) {
+        this.idReceita = idReceita;
+    }
+
+    private List<ItemVenda> itens;
 
     public Date getData() {
         return data;
@@ -24,11 +43,11 @@ public class Venda implements IModel{
         this.hora = hora;
     }
 
-    public List<Transacao> getItens() {
+    public List<ItemVenda> getItens() {
         return itens;
     }
 
-    public void setItens(List<Transacao> itens) {
+    public void setItens(List<ItemVenda> itens) {
         this.itens = itens;
     }
 }

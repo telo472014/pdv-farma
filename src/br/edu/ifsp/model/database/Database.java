@@ -8,11 +8,7 @@ public interface Database {
 
 	ResultSet query(String sql);
 
-	boolean insert(String sql);
-
-	boolean update(String sql);
-
-	boolean delete(String sql);
+	boolean executeSQL(String sql);
 
 	boolean disconnect();
 

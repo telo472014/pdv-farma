@@ -82,20 +82,27 @@ public class MariaDatabase implements Database {
 		return result;
 	}
 
-	@Override
-	public boolean insert(String sql) {
-		return false;
-	}
+    @Override
+    public boolean executeSQL(String sql) {
+        boolean success = false;
 
-	@Override
-	public boolean update(String sql) {
-		return false;
-	}
+        try{
+            if (connection != null && !connection.isClosed()) {
 
-	@Override
-	public boolean delete(String sql) {
-		return false;
-	}
+                PreparedStatement statement = this.connection.prepareStatement(sql);
+
+                statement.execute();
+
+                success = true;
+            } else
+                throw new Exception("Database is not connected.");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return success;
+    }
 
 	public boolean disconnect() {
 

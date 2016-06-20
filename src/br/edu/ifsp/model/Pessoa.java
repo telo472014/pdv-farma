@@ -1,8 +1,8 @@
 package br.edu.ifsp.model;
 
-import java.sql.Date;
+import java.util.Date;
 
-public abstract class Pessoa implements IModel{
+public class Pessoa implements IModel{
     private String nome;
     private Date nascimento;
     private long idPessoa;
